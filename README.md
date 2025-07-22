@@ -36,6 +36,10 @@ end
 
 ## Markup example
 
+This button is used to initiate the authentication flow. It will trigger the
+normal web-based OAuth flow outside the iOS app, but will otherwise initiate a
+native authentication flow using the Google Sign-in SDK.
+
 ```erb
 <%= button_to "/auth/google_oauth2",
               data: {
@@ -43,7 +47,7 @@ end
                 controller: "bridge--google-auth google",
                 action: "bridge--google-auth#authorize"
               } do %>
-  Signin with Google
+  Sign-in with Google
 <% end %>
 ```
 
@@ -148,8 +152,8 @@ graph LR;
 
 ## Support
 
-Please understand that **this is not a library**, and it may not work for you out
-of the box - it's intended to be a reference implementation for how to
+Please understand that **this is not a library**, and it may not work for you
+out of the box - it's intended to be a reference implementation for how to
 implement Google authentication with Hotwire Native, not a drop-in solution.
 
 Having said that, I hope that it helps you get started with Google
